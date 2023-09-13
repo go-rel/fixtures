@@ -1,7 +1,7 @@
 # Fixtures
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/go-rel/fixtures.svg)](https://pkg.go.dev/github.com/go-rel/fixtures)
-[![Tests](https://github.com/go-rel/fixtures/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/go-rel/fixtures/actions/workflows/test.yml)
+[![Tests](https://github.com/go-rel/fixtures/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/go-rel/fixtures/actions/workflows/test.yaml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/go-rel/fixtures)](https://goreportcard.com/report/github.com/go-rel/fixtures)
 [![codecov](https://codecov.io/gh/go-rel/fixtures/branch/main/graph/badge.svg?token=yxBdKVPXip)](https://codecov.io/gh/go-rel/fixtures)
 [![Gitter chat](https://badges.gitter.im/go-rel/rel.png)](https://gitter.im/go-rel/rel)
