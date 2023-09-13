@@ -25,8 +25,8 @@ import (
 )
 
 func main() {
-    repo := fixtures.NewRepository()
-    // Register all needed types
+	repo := fixtures.NewRepository()
+	// Register all needed types
 	repo.Register(&User{})
 	repo.Register(&Address{})
 	repo.Register(&Transaction{})
@@ -66,8 +66,8 @@ import (
 )
 
 func main() {
-    repo := fixtures.NewRepository()
-    // Register all needed types
+	repo := fixtures.NewRepository()
+	// Register all needed types
 	repo.Register(&User{})
 	repo.Register(&Address{})
 	repo.Register(&Transaction{})
