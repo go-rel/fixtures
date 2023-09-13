@@ -7,7 +7,7 @@ import (
 )
 
 func TestFixtutes_Register(t *testing.T) {
-	repo := NewRepository()
+	repo := New()
 	repo.Register(User{})
 	repo.Register(Address{})
 	repo.Register(Transaction{})

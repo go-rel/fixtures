@@ -25,7 +25,7 @@ import (
 )
 
 func main() {
-	repo := fixtures.NewRepository()
+	repo := fixtures.New()
 	// Register all needed types
 	repo.Register(&User{})
 	repo.Register(&Address{})
@@ -33,7 +33,7 @@ func main() {
 
 	// TODO db := rel.New(adapter)
 
-	if err := repo.ImportFromYAML(context.Background(), db,
+	if err := repo.Import(context.Background(), db,
 		[]byte(`---
 users:
 - id: 1
@@ -66,7 +66,7 @@ import (
 )
 
 func main() {
-	repo := fixtures.NewRepository()
+	repo := fixtures.New()
 	// Register all needed types
 	repo.Register(&User{})
 	repo.Register(&Address{})
@@ -74,7 +74,7 @@ func main() {
 
 	// TODO db := rel.New(adapter)
 
-	if err := repo.ImportFromDir(context.Background(), db, "path/to/dir/")); err != nil {
+	if err := repo.ImportDir(context.Background(), db, "path/to/dir/")); err != nil {
 		panic(err)
 	}
 }

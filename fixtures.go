@@ -2,12 +2,12 @@
 //
 // Usage:
 //
-//	repo := fixtures.NewRepository()
+//	repo := fixtures.New()
 //	// Register all needed types
 //	repo.Register(&MyTableType{})
 //
 //	// Import data from YAML content
-//	err := repo.ImportFromYAML(ctx, db, content)
+//	err := repo.Import(ctx, db, content)
 package fixtures
 
 import (
@@ -34,8 +34,8 @@ type Repository struct {
 	registry map[string]any
 }
 
-// NewRepository creates a new fixtures repository.
-func NewRepository() *Repository {
+// New creates a new fixtures repository.
+func New() *Repository {
 	return &Repository{
 		log:      defaultLogger{},
 		registry: make(map[string]any, 10),

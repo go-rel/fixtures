@@ -8,7 +8,7 @@ import (
 )
 
 func TestRepository_ImportOrder(t *testing.T) {
-	repo := NewRepository()
+	repo := New()
 	repo.Register(User{})
 	repo.Register(Transaction{})
 	repo.Register(Address{})
@@ -21,7 +21,7 @@ func TestRepository_ImportOrder(t *testing.T) {
 }
 
 func TestRepository_DrawDependencies(t *testing.T) {
-	repo := NewRepository()
+	repo := New()
 	repo.Register(User{})
 	repo.Register(Transaction{})
 	repo.Register(Address{})

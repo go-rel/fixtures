@@ -64,15 +64,15 @@ func createTestDB(t *testing.T) rel.Repository {
 	return db
 }
 
-func TestFixtures_ImportYAML(t *testing.T) {
-	repo := NewRepository()
+func TestFixtures_Import(t *testing.T) {
+	repo := New()
 	repo.Register(&User{})
 	repo.Register(&Address{})
 	repo.Register(&Transaction{})
 
 	db := createTestDB(t)
 
-	err := repo.ImportFromYAML(context.TODO(), db,
+	err := repo.Import(context.TODO(), db,
 		[]byte(`---
 users:
 - id: 1
@@ -99,14 +99,14 @@ transactions:
 }
 
 func TestFixtures_ImportDir(t *testing.T) {
-	repo := NewRepository()
+	repo := New()
 	repo.Register(&User{})
 	repo.Register(&Address{})
 	repo.Register(&Transaction{})
 
 	db := createTestDB(t)
 
-	err := repo.ImportFromDir(context.TODO(), db, "testdata/sample/")
+	err := repo.ImportDir(context.TODO(), db, "testdata/sample/")
 	qt.Assert(t, qt.IsNil(err))
 
 	user := User{}

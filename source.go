@@ -92,8 +92,8 @@ func (w *fixtureLoader) Visit(node ast.Node) ast.Visitor {
 	return w
 }
 
-// ImportFromYAML imports data from YAML file content.
-func (r *Repository) ImportFromYAML(ctx context.Context, db rel.Repository, source []byte) error {
+// Import data from YAML file content.
+func (r *Repository) Import(ctx context.Context, db rel.Repository, source []byte) error {
 	p, err := parser.ParseBytes(source, 0)
 	if err != nil {
 		return err
@@ -111,8 +111,8 @@ func (r *Repository) ImportFromYAML(ctx context.Context, db rel.Repository, sour
 	return r.importData(ctx, db, w.data)
 }
 
-// ImportFromDir imports data from YAML files in a directory.
-func (r *Repository) ImportFromDir(ctx context.Context, db rel.Repository, path string) error {
+// ImportDir imports data from YAML files in a directory.
+func (r *Repository) ImportDir(ctx context.Context, db rel.Repository, path string) error {
 	dir, err := os.ReadDir(path)
 	if err != nil {
 		return err
