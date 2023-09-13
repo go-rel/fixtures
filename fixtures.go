@@ -11,6 +11,7 @@
 package fixtures
 
 import (
+	"context"
 	"log"
 	"reflect"
 
@@ -26,6 +27,11 @@ type defaultLogger struct{}
 
 func (l defaultLogger) Warn(msg string) {
 	log.Println(msg)
+}
+
+// BeforeSave interface can be implemented by a type to allow changing type data before saving data to database.
+type BeforeSave interface {
+	BeforeSave(context.Context) error
 }
 
 // Repsitory of fixtures that can be loaded and imported.

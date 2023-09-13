@@ -1,6 +1,8 @@
 package fixtures
 
 import (
+	"context"
+	"strings"
 	"time"
 )
 
@@ -37,4 +39,10 @@ type Transaction struct {
 type Address struct {
 	ID   int
 	City string
+}
+
+func (a *Address) BeforeSave(_ context.Context) error {
+	a.City = strings.TrimSpace(a.City)
+
+	return nil
 }
