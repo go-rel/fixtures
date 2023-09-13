@@ -164,6 +164,11 @@ func (r *Repository) importData(ctx context.Context, db rel.Repository, data map
 			}
 
 			for _, v := range data[table] {
+				if t, ok := v.(BeforeSave); ok {
+					if err := t.BeforeSave(ctx); err != nil {
+						return err
+					}
+				}
 				if err := db.Insert(ctx, v); err != nil {
 					return err
 				}
