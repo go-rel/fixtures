@@ -119,3 +119,16 @@ func TestFixtures_ImportDir(t *testing.T) {
 	qt.Check(t, qt.Equals(user.Address.ID, 1))
 	qt.Check(t, qt.Equals(user.Address.City, "New York"))
 }
+
+func TestFixtures_SkipResolve(t *testing.T) {
+	repo := New()
+	repo.SetSkipResolve(true)
+	repo.Register(&Address{})
+	repo.Register(&User{})
+	repo.Register(&Transaction{})
+
+	db := createTestDB(t)
+
+	err := repo.ImportDir(context.TODO(), db, "testdata/sample/")
+	qt.Assert(t, qt.IsNil(err))
+}
