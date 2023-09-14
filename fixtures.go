@@ -36,8 +36,10 @@ type BeforeSave interface {
 
 // Repsitory of fixtures that can be loaded and imported.
 type Repository struct {
-	log      Logger
-	registry map[string]any
+	log         Logger
+	registry    map[string]any
+	order       []string
+	skipResolve bool
 }
 
 // New creates a new fixtures repository.
@@ -45,6 +47,7 @@ func New() *Repository {
 	return &Repository{
 		log:      defaultLogger{},
 		registry: make(map[string]any, 10),
+		order:    make([]string, 0, 10),
 	}
 }
 
@@ -60,9 +63,15 @@ func (r *Repository) Register(v any) {
 	}
 
 	r.registry[name] = v
+	r.order = append(r.order, name)
 }
 
 // SetLogger sets the logger to be used by the repository to notify about warnings.
 func (r *Repository) SetLogger(l Logger) {
 	r.log = l
+}
+
+// SetSkipResolve sets whether the repository should skip resolving relations and use registration order.
+func (r *Repository) SetSkipResolve(skip bool) {
+	r.skipResolve = skip
 }

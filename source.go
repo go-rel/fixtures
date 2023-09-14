@@ -145,14 +145,17 @@ func (r *Repository) ImportDir(ctx context.Context, db rel.Repository, path stri
 }
 
 func (r *Repository) importData(ctx context.Context, db rel.Repository, data map[string][]any) error {
-	tables, err := r.importOrder()
-	if err != nil {
-		r.log.Warn(fmt.Sprintf("failed to get table import order: %v", err))
+	var tables []string
+	if !r.skipResolve {
+		var err error
+		if tables, err = r.importOrder(); err != nil {
+			r.log.Warn(fmt.Sprintf("failed to get table import order: %v", err))
 
-		// Fallback to list of map keys
-		for table := range r.registry {
-			tables = append(tables, table)
+			// Fallback to registration order
+			tables = r.order
 		}
+	} else {
+		tables = r.order
 	}
 
 	return db.Transaction(ctx, func(ctx context.Context) error {
