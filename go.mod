@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/dominikbraun/graph v0.23.0
 	github.com/go-quicktest/qt v1.101.0
-	github.com/go-rel/rel v0.40.0
+	github.com/go-rel/rel v0.41.0
 	github.com/go-rel/sqlite3 v0.10.0
 	github.com/goccy/go-yaml v1.11.2
 	github.com/mattn/go-sqlite3 v1.14.17
