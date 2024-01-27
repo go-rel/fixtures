@@ -7,7 +7,7 @@ require (
 	github.com/go-quicktest/qt v1.101.0
 	github.com/go-rel/rel v0.41.0
 	github.com/go-rel/sqlite3 v0.11.0
-	github.com/goccy/go-yaml v1.11.2
+	github.com/goccy/go-yaml v1.11.3
 	github.com/mattn/go-sqlite3 v1.14.19
 )
 
