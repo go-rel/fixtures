@@ -8,7 +8,7 @@ require (
 	github.com/go-rel/rel v0.41.0
 	github.com/go-rel/sqlite3 v0.11.0
 	github.com/goccy/go-yaml v1.11.3
-	github.com/mattn/go-sqlite3 v1.14.21
+	github.com/mattn/go-sqlite3 v1.14.22
 )
 
 require (
