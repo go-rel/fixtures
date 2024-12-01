@@ -27,5 +27,5 @@ jobs:
       run: go test -race -coverprofile=coverage.txt -covermode=atomic ./...
       if: matrix.go == 1.21
     - name: Codecov
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v5
       if: matrix.go == 1.21
