@@ -7,7 +7,7 @@ toolchain go1.22.5
 require (
 	github.com/dominikbraun/graph v0.23.0
 	github.com/go-quicktest/qt v1.102.0
-	github.com/go-rel/rel v0.42.0
+	github.com/go-rel/rel v0.43.0
 	github.com/go-rel/sqlite3 v0.12.0
 	github.com/goccy/go-yaml v1.19.2
 	github.com/mattn/go-sqlite3 v1.14.49
