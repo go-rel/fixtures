@@ -10,7 +10,7 @@ require (
 	github.com/go-rel/rel v0.42.0
 	github.com/go-rel/sqlite3 v0.12.0
 	github.com/goccy/go-yaml v1.19.2
-	github.com/mattn/go-sqlite3 v1.14.49
+	github.com/mattn/go-sqlite3 v1.14.50
 )
 
 require (
